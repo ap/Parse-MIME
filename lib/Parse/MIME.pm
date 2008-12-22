@@ -44,7 +44,6 @@ sub parse_media_range {
 
 	$param->{'q'} = 1
 		unless exists $param->{'q'}
-		and defined $param->{'q'}
 		and length  $param->{'q'}
 		and _numify $param->{'q'} <= 1
 		and _numify $param->{'q'} >= 0;
