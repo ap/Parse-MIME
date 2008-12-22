@@ -4,19 +4,25 @@ use warnings;
 
 use Test::More;
 use Parse::MIME qw( quality );
+use File::Basename qw( fileparse );
+use JSON::XS;
 
-my $accept = 'text/*;q=0.3, text/html;q=0.7, text/html;level=1, text/html;level=2;q=0.4, */*;q=0.5';
-my %testcase = (
-	'text/html;level=1' => 1.0,
-	'text/html'         => 0.7,
-	'text/plain'        => 0.3,
-	'image/jpeg'        => 0.5,
-	'text/html;level=2' => 0.4,
-	'text/html;level=3' => 0.7,
-);
+my $testcase = decode_json do {
 
-plan tests => 0 + keys %testcase;
+	my ( $name, $path ) = fileparse( $0, qr/\.t\z/ );
+	my $testfile = "$path$name.json";
 
-while ( my ( $type, $quality ) = each %testcase ) {
+	open my $fh, '<', $testfile
+		or die "can't open $testfile for reading: $!\n";
+
+	local $/;
+	<$fh>;
+
+};
+
+plan tests => 0 + keys %{ $testcase->{testcases} };
+
+my $accept = $testcase->{ accept };
+while ( my ( $type, $quality ) = each %{ $testcase->{testcases} } ) {
 	is quality( $type, $accept ), $quality, $type;
 }

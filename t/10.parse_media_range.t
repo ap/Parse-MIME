@@ -4,21 +4,24 @@ use warnings;
 
 use Test::More;
 use Parse::MIME qw( parse_media_range );
+use File::Basename qw( fileparse );
+use JSON::XS;
 
-my %testcase = (
-	'application/xml;q=1'           => [ 'application', 'xml', { q => 1 } ],
-	'application/xml'               => [ 'application', 'xml', { q => 1 } ],
-	'application/xml;q='            => [ 'application', 'xml', { q => 1 } ],
-	'application/xml ; q='          => [ 'application', 'xml', { q => 1 } ],
-	'application/xml ; q=1;b=other' => [ 'application', 'xml', { q => 1, b => 'other' } ],
-	'application/xml ; q=2;b=other' => [ 'application', 'xml', { q => 1, b => 'other' } ],
+my $testcase = decode_json do {
 
-	# Java URLConnection class sends an Accept header that includes a single *
-	' *; q=.2' => [ '*', '*', { q => '.2' } ],
-);
+	my ( $name, $path ) = fileparse( $0, qr/\.t\z/ );
+	my $testfile = "$path$name.json";
 
-plan tests => 0 + keys %testcase;
+	open my $fh, '<', $testfile
+		or die "can't open $testfile for reading: $!\n";
 
-while ( my ( $range, $parsed ) = each %testcase ) {
+	local $/;
+	<$fh>;
+
+};
+
+plan tests => 0 + keys %$testcase;
+
+while ( my ( $range, $parsed ) = each %$testcase ) {
 	is_deeply [ parse_media_range $range ], $parsed, $range;
 }

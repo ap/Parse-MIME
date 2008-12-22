@@ -7,7 +7,7 @@ my $builder = Module::Build->new(
 	license            => 'perl',
 	dist_author        => 'Aristotle Pagaltzis <pagaltzis@gmx.de>',
 	requires           => {},
-	build_requires     => { 'Test::More' => 0 },
+	build_requires     => { 'Test::More' => 0, 'File::Basename' => 0, 'JSON::XS' => 0 },
 	add_to_cleanup     => [ 'Parse-MIME-*' ],
 	create_makefile_pl => 'traditional',
 );

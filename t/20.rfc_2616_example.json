@@ -1,0 +1,11 @@
+{
+	"accept": "text/*;q=0.3, text/html;q=0.7, text/html;level=1, text/html;level=2;q=0.4, */*;q=0.5",
+	"testcases": {
+		"text/html;level=1" : 1.0,
+		"text/html"         : 0.7,
+		"text/plain"        : 0.3,
+		"image/jpeg"        : 0.5,
+		"text/html;level=2" : 0.4,
+		"text/html;level=3" : 0.7
+	}
+}
