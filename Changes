@@ -1,0 +1,11 @@
+=head1 Revision history for Parse-MIME
+
+=head2 0.0.1 (Sun Dec 21 06:21:13 2008)
+
+=over 4
+
+=item * Initial release.
+
+=back
+
+=for vim vi:tw=72:ft=pod

@@ -1,0 +1,11 @@
+.gitignore
+Build.PL
+Changes
+lib/Parse/MIME.pm
+MANIFEST			This list of files
+README
+t/00.load.t
+t/10_parse_media_range.t
+t/20_rfc_2616_example.t
+t/30_best_match.t
+t/cpants.t
