@@ -43,7 +43,7 @@ sub parse_media_range {
 	my ( $type, $subtype, $param ) = parse_mime_type $range;
 
 	$param->{'q'} = 1
-		unless exists $param->{'q'}
+		unless defined $param->{'q'}
 		and length  $param->{'q'}
 		and _numify $param->{'q'} <= 1
 		and _numify $param->{'q'} >= 0;
