@@ -1,4 +1,29 @@
-[
+{
+"parse_media_range": {
+	"application/xml;q=1"           : [ "application", "xml", { "q": "1" } ],
+	"application/xml"               : [ "application", "xml", { "q": "1" } ],
+	"application/xml;q="            : [ "application", "xml", { "q": "1" } ],
+	"application/xml ; q="          : [ "application", "xml", { "q": "1" } ],
+	"application/xml ; q=1;b=other" : [ "application", "xml", { "q": "1", "b": "other" } ],
+	"application/xml ; q=2;b=other" : [ "application", "xml", { "q": "1", "b": "other" } ],
+	" *; q=.2": [ "*", "*", { "q": ".2" } ]
+},
+
+"quality": [
+	{
+		"accept": "text/*;q=0.3, text/html;q=0.7, text/html;level=1, text/html;level=2;q=0.4, */*;q=0.5",
+		"testcases": {
+			"text/html;level=1" : 1.0,
+			"text/html"         : 0.7,
+			"text/plain"        : 0.3,
+			"image/jpeg"        : 0.5,
+			"text/html;level=2" : 0.4,
+			"text/html;level=3" : 0.7
+		}
+	}
+],
+
+"best_match": [
 	{
 		"supported": [ "application/xbel+xml", "application/xml" ],
 		"testcases": [
@@ -31,3 +56,4 @@
 		]
 	}
 ]
+}

@@ -4,21 +4,10 @@ use warnings;
 
 use Test::More;
 use Parse::MIME qw( parse_media_range );
-use File::Basename qw( fileparse );
-use JSON::XS;
 
-my $testcase = decode_json do {
-
-	my ( $name, $path ) = fileparse( $0, qr/\.t\z/ );
-	my $testfile = "$path$name.json";
-
-	open my $fh, '<', $testfile
-		or die "can't open $testfile for reading: $!\n";
-
-	local $/;
-	<$fh>;
-
-};
+use lib 't';
+use TestParseMIME;
+my $testcase = TestParseMIME::load_data $0;
 
 plan tests => 0 + keys %$testcase;
 
