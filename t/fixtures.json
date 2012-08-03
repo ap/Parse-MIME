@@ -1,4 +1,9 @@
 {
+"parse_mime_type": {
+	"application/xhtml;q=0.5":         ["application", "xhtml", {"q": "0.5"}],
+	"application/xhtml;q=0.5;ver=1.2": ["application", "xhtml", {"q": "0.5", "ver": "1.2"}]
+},
+
 "parse_media_range": {
 	"application/xml;q=1"           : [ "application", "xml", { "q": "1" } ],
 	"application/xml"               : [ "application", "xml", { "q": "1" } ],
