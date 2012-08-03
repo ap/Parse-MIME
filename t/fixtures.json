@@ -20,6 +20,12 @@
 			"text/html;level=2" : 0.4,
 			"text/html;level=3" : 0.7
 		}
+	},
+	{
+		"accept": "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2",
+		"testcases": {
+			"text/plain"        : 0.2
+		}
 	}
 ],
 
