@@ -1,6 +1,12 @@
 =head1 Revision history for Parse-MIME
 
-=head2 0.0.1 (Sun Dec 21 06:21:13 2008)
+=head2 1.000 (Fri Aug  3 20:12:25 2012)
+
+=over 4
+
+=item * Initial release.
+
+=head2 0.001 (Sun Dec 21 06:21:13 2008)
 
 =over 4
 

@@ -3,7 +3,8 @@ use strict;
 use warnings;
 
 package Parse::MIME;
-our $VERSION = '0.1.2';
+
+# ABSTRACT: Parse mime-types, match against media ranges
 
 use Exporter 'import';
 our @EXPORT_OK = qw(
@@ -119,14 +120,6 @@ sub best_match {
 
 __END__
 
-=head1 NAME
-
-Parse::MIME - Parse mime-types, match against media ranges
-
-=head1 VERSION
-
-This document describes Parse::MIME version 0.1.2
-
 =head1 SYNOPSIS
 
  use Parse::MIME qw( best_match );
@@ -137,7 +130,7 @@ This document describes Parse::MIME version 0.1.2
 
 This module provides basic functions for handling mime-types. It can handle matching mime-types against a list of media-ranges. See section 14.1 of the HTTP specification [RFC 2616] for a complete explanation: L<http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.1>
 
-=head1 INTERFACE 
+=head1 INTERFACE
 
 None of the following functions are exported by default. You can use the C<:all> tag to import all of them into your package:
 
@@ -186,15 +179,9 @@ Just like L</quality>, except the second parameter must be pre-parsed by L</pars
 =head2 best_match
 
 Choose the mime-type with the highest quality (C<q>) from a list of candidates. Takes an array of supported mime-types as the first parameter and finds the best match for all the media-ranges listed in header, which is passed as the second parameter. The value of header must be a string that conforms to the format of the HTTP C<Accept> header. F.ex.:
-    
+
  best_match( [ qw( application/xbel+xml text/xml ) ], 'text/*;q=0.5,*/*; q=0.1' )
  # 'text/xml'
-
-=head1 BUGS AND LIMITATIONS
-
-No bugs have been reported.
-
-Please report any bugs or feature requests to L<mailto:bug-parse-mime@rt.cpan.org>, or through the web interface at L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=parse-mime>.
 
 =head1 AUTHOR
 
@@ -210,16 +197,8 @@ Perl port
 
 =back
 
-=head1 COPYRIGHT AND LICENCE 
+=head1 COPYRIGHT AND LICENCE
 
 Documentation: Copyright (c) 2008, Joe Gregorio. All rights reserved.
 
 Perl code: Copyright (c) 2008, Aristotle Pagaltzis. All rights reserved.
-
-This module is free software; you can redistribute it and/or modify it under the same terms as the Perl 5.8 series. See L<perlartistic>.
-
-=head1 DISCLAIMER OF WARRANTY
-
-BECAUSE THIS SOFTWARE IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY FOR THE SOFTWARE, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE SOFTWARE "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE SOFTWARE IS WITH YOU. SHOULD THE SOFTWARE PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR, OR CORRECTION.
-
-IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR REDISTRIBUTE THE SOFTWARE AS PERMITTED BY THE ABOVE LICENCE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE SOFTWARE (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF THE SOFTWARE TO OPERATE WITH ANY OTHER SOFTWARE), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
