@@ -1,5 +1,9 @@
 Revision history for Parse-MIME
 
+1.001 Thu 10 July 2014
+	- Bump Dist::Zilla version and re-release to fix deps.
+	  No code changes. (Spotted by Olaf Alders.)
+
 1.000 Fri 03 Aug 2012
 	- Initial CPAN release.
 
