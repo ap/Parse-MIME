@@ -1,17 +1,7 @@
-=head1 Revision history for Parse-MIME
+Revision history for Parse-MIME
 
-=head2 1.000 (Fri Aug  3 20:12:25 2012)
+1.000 Fri 03 Aug 2012
+	- Initial CPAN release.
 
-=over 4
-
-=item * Initial release.
-
-=head2 0.001 (Sun Dec 21 06:21:13 2008)
-
-=over 4
-
-=item * Initial release.
-
-=back
-
-=for vim vi:tw=72:ft=pod
+0.001 Sun 21 Dec 2008
+	- Initial release.
