@@ -3,9 +3,9 @@ use strict;
 use warnings;
 
 use Test::More;
-use Parse::MIME qw( parse_mime_type );
+use Parse::MIME 'parse_mime_type';
 
-use lib 't';
+use lib 't/lib';
 use TestParseMIME;
 my $testcase = TestParseMIME::load_data $0;
 

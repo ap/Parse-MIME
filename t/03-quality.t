@@ -3,11 +3,9 @@ use strict;
 use warnings;
 
 use Test::More;
-use Parse::MIME qw( quality );
-use File::Basename qw( fileparse );
-use JSON::XS;
+use Parse::MIME 'quality';
 
-use lib 't';
+use lib 't/lib';
 use TestParseMIME;
 my $testcase = TestParseMIME::load_data $0;
 

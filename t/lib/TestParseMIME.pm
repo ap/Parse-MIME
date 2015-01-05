@@ -2,8 +2,8 @@
 use strict;
 use warnings;
 
-package # hide from CPAN index
-TestParseMIME;
+package # hide from PAUSE
+	TestParseMIME;
 
 use File::Basename 'fileparse';
 use JSON::XS 'decode_json';
@@ -20,7 +20,7 @@ sub load_data {
 	};
 
 	my ( $key ) = fileparse $filename, qr/\.t\z/;
-	$key =~ s/\A[0-9]+\.//;
+	$key =~ s/\A[0-9]+\-//;
 	return $testdata->{ $key };
 }
 
