@@ -1,5 +1,9 @@
 Revision history for Parse-MIME
 
+1.003 Sat 10 Jan 2015
+	- No functional changes
+	- No longer contains INSTALL file with install-as-root instructions
+
 1.002 Mon 05 Jan 2014
 	- No functional changes.
 	- Specified 5.6 minimum Perl requirement.
