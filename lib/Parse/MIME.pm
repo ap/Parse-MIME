@@ -120,6 +120,8 @@ sub best_match {
 
 __END__
 
+=pod
+
 =head1 SYNOPSIS
 
  use Parse::MIME qw( best_match );
