@@ -6,7 +6,7 @@ package # hide from PAUSE
 	TestParseMIME;
 
 use File::Basename 'fileparse';
-use JSON::XS 'decode_json';
+use JSON::PP 'decode_json';
 
 sub load_data {
 	my ( $filename ) = @_;
