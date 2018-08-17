@@ -5,7 +5,7 @@ requires 'Exporter';
 
 on test => sub {
 	requires 'File::Basename';
-	requires 'JSON::XS';
+	requires 'JSON::MaybeXS';
 	requires 'List::Util';
 	requires 'Test::More';
 	requires 'constant';

@@ -1,5 +1,7 @@
 Revision history for Parse-MIME
 
+	- now using JSON::MaybeXS in tests instead of JSON::XS.
+
 1.003 Sat 10 Jan 2015
 	- No functional changes
 	- No longer contains INSTALL file with install-as-root instructions
