@@ -1,10 +1,8 @@
-use 5.006;
-use strict;
-use warnings;
+use 5.006; use strict; use warnings;
 
 package Parse::MIME;
 
-# ABSTRACT: Parse mime-types, match against media ranges
+our $VERSION = '1.003';
 
 use Exporter 'import';
 our @EXPORT_OK = qw(
@@ -122,6 +120,12 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
+=head1 NAME
+
+Parse::MIME - Parse mime-types, match against media ranges
+
 =head1 SYNOPSIS
 
  use Parse::MIME qw( best_match );
@@ -204,3 +208,5 @@ format of the HTTP C<Accept> header. F.ex.:
 
  best_match( [ qw( application/xbel+xml text/xml ) ], 'text/*;q=0.5,*/*; q=0.1' )
  # 'text/xml'
+
+=cut
