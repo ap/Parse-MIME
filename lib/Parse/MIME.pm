@@ -2,7 +2,7 @@ use 5.006; use strict; use warnings;
 
 package Parse::MIME;
 
-our $VERSION = '1.003';
+our $VERSION = '1.004';
 
 use Exporter 'import';
 our @EXPORT_OK = qw(

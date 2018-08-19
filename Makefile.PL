@@ -6,7 +6,7 @@ my %META = (
 	name        => 'Parse-MIME',
 	author      => 'Aristotle Pagaltzis <pagaltzis@gmx.de>',
 	license     => 'perl_5',
-	x_copyright => { holder => 'Aristotle Pagaltzis', year => 2015 },
+	x_copyright => { holder => 'Aristotle Pagaltzis', year => 2018 },
 	prereqs     => {
 		configure => { requires => {qw(
 			ExtUtils::MakeMaker 0
