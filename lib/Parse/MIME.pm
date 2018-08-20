@@ -2,7 +2,7 @@ use 5.006; use strict; use warnings;
 
 package Parse::MIME;
 
-our $VERSION = '1.004';
+our $VERSION = '1.005';
 
 use Exporter ();
 our @ISA = 'Exporter';
