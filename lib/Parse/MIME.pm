@@ -4,7 +4,8 @@ package Parse::MIME;
 
 our $VERSION = '1.004';
 
-use Exporter 'import';
+use Exporter ();
+our @ISA = 'Exporter';
 our @EXPORT_OK = qw(
 	&parse_mime_type &parse_media_range &parse_media_range_list 
 	&fitness_and_quality_parsed &quality_parsed &quality
