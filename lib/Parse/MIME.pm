@@ -1,8 +1,7 @@
 use 5.006; use strict; use warnings;
 
 package Parse::MIME;
-
-our $VERSION = '1.005';
+our $VERSION = '1.006';
 
 BEGIN { require Exporter; *import = \&Exporter::import }
 our @EXPORT_OK = qw(
