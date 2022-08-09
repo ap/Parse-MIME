@@ -8,9 +8,6 @@ my %META = (
 	license     => 'perl_5',
 	x_copyright => { holder => 'Aristotle Pagaltzis', year => 2018 },
 	prereqs     => {
-		configure => { requires => {qw(
-			ExtUtils::MakeMaker 0
-		)} },
 		runtime => { requires => {qw(
 			perl                5.006
 			Exporter            0
